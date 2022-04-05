@@ -5,7 +5,7 @@ import kotlin.math.roundToInt
 fun main() {
 
     agoToText(50)
-    commision("Mastercard", 740000,7500000)
+    commision("Visa", 7400000,75000000)
 }
 
     fun agoToText (secondsNotOnline:Int){
@@ -40,12 +40,12 @@ fun main() {
             }
         }
 
-fun commision(cardType: String = "VK Pay", monthSum: Int = 0, transferSum: Int) {
+fun commision(cardType: String = "Mastercard", monthSum: Int = 0, transferSum: Int) {
     println("Вы хотите перевести ${transferSum / 100} руб.")
     println("Ваша комиссия составит - ${comissioncalc(cardType, monthSum, transferSum) / 100} руб. \n")
 }
 
-fun comissioncalc(cardType: String = "VK Pay", monthSum: Int = 0, transferSum: Int): Int {
+fun comissioncalc(cardType: String = "Mastercard", monthSum: Int = 0, transferSum: Int): Int {
     when (cardType) {
         "VK Pay" -> return 0
         "Mastercard", "Maestro" -> return masterComission(monthSum, transferSum)
